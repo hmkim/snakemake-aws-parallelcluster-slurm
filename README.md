@@ -19,3 +19,9 @@ Make sure the `status-scontrol.sh` script is executable, and in `config.yaml`cha
 in section `default-resources` to the name of a queue in your cluster.
 
 From `my-workflow`, execute Snakemake as `snakemake --profile profiles/aws-parallelcluster-slurm`.
+
+Modified for snakemake 8 version.
+
+Please modify the 2 variables below to suit your needs.
+`partition`
+`tmpdir`
