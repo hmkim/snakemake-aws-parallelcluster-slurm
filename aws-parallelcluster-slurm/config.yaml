@@ -1,4 +1,5 @@
-cluster:
+executor: cluster-generic
+cluster-generic-submit-cmd:
   mkdir -p logs/{rule}/ &&
   sbatch
     --parsable
@@ -10,8 +11,8 @@ cluster:
     --partition={resources.partition}
 default-resources:
   - time=1440
-  - partition='compute-small'
-  - tmpdir='/scratch'
+  - partition='queue1'
+  - tmpdir='/tmp'
 jobs: 150
 latency-wait: 120
 local-cores: 1
@@ -23,6 +24,6 @@ printshellcmds: True
 scheduler: greedy
 use-conda: True
 conda-frontend: mamba
-cluster-status: status-scontrol.sh
-cluster-cancel: scancel
+cluster-generic-status-cmd: status-scontrol.sh
+cluster-generic-cancel-cmd: scancel
 max-status-checks-per-second: 10
